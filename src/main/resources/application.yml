@@ -1,0 +1,35 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+
+      master:
+        jdbc-url: jdbc:mysql://localhost:3306/test1?serverTimezone=UTC
+        username: root
+        password: 1126
+
+      slave:
+
+        enabled: true
+
+        jdbc-url: jdbc:mysql://localhost:3306/test2?serverTimezone=UTC
+        username: root
+        password: 1126
+
+
+mybatis:
+  type-aliases-package: cn.baisee.ftp.entity
+  configuration:
+    map-underscore-to-camel-case: true
+file:
+  connect:
+    sftp:
+      param:
+        host: 192.168.197.128
+        port: 22
+        username: hyxd
+        password: liuzihou
+        bassPath: /sftp/hyxd/upload
+        directory: files
